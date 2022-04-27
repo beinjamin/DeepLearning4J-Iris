@@ -21,6 +21,13 @@ public class IrisApp {
 			 .activation(Activation.SIGMOID)
 			 .build()
 			 )
+	 .layer(1, new DenseLayer.Builder()
+			 .nInt(numHidden)
+			 .nOut(numOutputs)
+			 .activation(Activation.SOFTMAX)
+			 .lossFunction(LossFuntions.LossFuntion.ME)
+			 
+			 )
 	.build();
 	}
 }
