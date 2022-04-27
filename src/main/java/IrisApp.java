@@ -10,6 +10,7 @@ public class IrisApp {
 	double learninRate=0.001;
 	int numInputs=4;
 	int numHidden=10;
+	int numOutputs=3;
 	MultiLayerConfiguration configuration=new NeuralNetConfiguration.Builder()
 	.updater(new Adam(learninRate))
 			
@@ -22,7 +23,7 @@ public class IrisApp {
 			 .build()
 			 )
 	 .layer(1, new DenseLayer.Builder()
-			 .nInt(numHidden)
+			 .nIn(numHidden)
 			 .nOut(numOutputs)
 			 .activation(Activation.SOFTMAX)
 			 .lossFunction(LossFuntions.LossFuntion.ME)
