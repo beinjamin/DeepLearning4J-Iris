@@ -3,6 +3,7 @@ import java.io.IOException;
 
 import org.datavec.api.records.reader.RecordReader;
 import org.datavec.api.records.reader.impl.csv.CSVRecordReader;
+import org.datavec.api.split.FileSplit;
 import org.deeplearning4j.nn.conf.MultiLayerConfiguration;
 import org.deeplearning4j.nn.conf.NeuralNetConfiguration;
 import org.deeplearning4j.nn.conf.layers.DenseLayer;
@@ -51,5 +52,6 @@ public class IrisApp {
 	
 	
 	RecordReader recordReaderTrain=new CSVRecordReader();	
+	recordReaderTrain.initialize(new FileSplit(fileTrain));
 	}
 }
